@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shafin Rezwan Creative Developer Portfolio</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <link rel="stylesheet" href="creative.css">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div class="cursor-glow"></div>
+
+    <header>
+        <nav>
+            <div class="logo">Shafin Rezwan</div>
+            <div class="nav-links">
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="floating-shapes">
+            <div class="shape" style="width: 50px; height: 50px; top: 20%; left: 20%;"></div>
+            <div class="shape" style="width: 70px; height: 70px; top: 60%; left: 80%;"></div>
+            <div class="shape" style="width: 40px; height: 40px; top: 80%; left: 40%;"></div>
+        </div>
+        <div class="hero-content">
+            <h1>Creative Developer</h1>
+            <p>Turning ideas into elegant code</p>
+            <div class="resume-container">
+                <a href="#" role="button"><button class="mybtn">Resume</button></a>
+            </div>
+            <div class="social-links">
+                <a href="https://github.com/ShafinRezwan"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/shafin-rezwan-b0415a203/"><i class="fab fa-linkedin"></i></a>
+                <a href="https://madeinbanglo.com"><i class="fa-solid fa-globe"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects-container">
+        <div class="project-card">
+            <a href="https://www.madeinbanglo.com"><img src="pbtbcoin.gif" alt="Project 1"></a>
+            <div class="project-content">
+                <h3>Banglo Studios</h3>
+                <p>Designed and developed branding for a creative Studio</p>
+            </div>
+        </div>
+        <div class="project-card">
+            <a href="https://cielleofficiel.com/"><img src="cielle-pixel-animation.gif" alt="Project 2"></a>
+            <div class="project-content">
+                <h3> Cielle Officel</h3>
+                <p>Designed and developed eccomerece site for couture brand based in London </p>
+            </div>
+        </div>
+        <div class="project-card">
+            <img src="migrante_logo_small.png" alt="Project 3">
+            <div class="project-content">
+                <h3>Migrante Alberta</h3>
+                <p>Created a mobile app using flutter for a Canadian non profit</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="skills-grid">
+        <div class="skill-card">
+            <i class="fas fa-code"></i>
+            <h3>Frontend Mastery</h3>
+            <p>React, Javascript, Liquid, HTML, CSS</p>
+        </div>
+        <div class="skill-card">
+            <i class="fas fa-server"></i>
+            <h3>Backend Expertise</h3>
+            <p>Python, Node.js, SQL</p>
+        </div>
+        <div class="skill-card">
+            <i class="fas fa-database"></i>
+            <h3>Tools</h3>
+            <p>Git, MonogDB</p>
+        </div>
+        <div class="skill-card">
+            <i class="fa-solid fa-paintbrush"></i>
+            <h3>Design</h3>
+            <p>Adobe XD, Figma, After Effects, Blender, AutoCAD</p>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="contact-form">
+            <h2>Let's Create Something Amazing</h2>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Send Message</button>
+        </div>
+    </section>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://github.com/ShafinRezwanecho "# ShafinRezwan.github.io" >> README.md
+                "><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/shafin-rezwan-b0415a203/"><i class="fab fa-linkedin"></i></a>
+            <a href="https://madeinbanglo.com"><i class="fa-solid fa-globe"></i></a>
+        </div>
+        <p>&copy; 2024 Creative Developer. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Cursor glow effect
+        document.addEventListener('mousemove', (e) => {
+            const cursor = document.querySelector('.cursor-glow');
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+
+        // Project card tilt effect
+        document.querySelectorAll('.project-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                
+                const rotateX = (y - centerY) / 20;
+                const rotateY = (centerX - x) / 20;
+                
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
+            });
+        });
+    </script>
+</body>
+</html>
