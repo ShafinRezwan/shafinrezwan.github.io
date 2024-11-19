@@ -11,6 +11,13 @@
     padding: 0;
     box-sizing: border-box;
 }
+a {
+    text-decoration: none;
+    color: var(--gradient-1)
+}
+a:visited {
+    color: var(--gradient-1);
+}
 
 body {
     font-family: system-ui, -apple-system, sans-serif;
