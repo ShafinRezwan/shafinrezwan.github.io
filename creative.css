@@ -5,6 +5,10 @@
     --text-color: #1e1e1e;
     --bg-color: #ffffff;
 }
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+  }
 
 * {
     margin: 0;
@@ -369,6 +373,88 @@ footer {
     transform: scale(1.2) rotate(10deg);
 }
 
+.philosophy-section {
+    padding: 6rem 0;
+    position: relative;
+}
+
+.philosophy-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    position: relative;
+}
+
+.philosophy-title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: #1dfa00;
+
+}
+
+.philosophy-para {
+    font-size: 0.9rem;
+    margin-top: -2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-style: italic;
+}
+
+.philosophy-quote {
+    font-size: 1.5rem;
+    font-style: italic;
+    margin-bottom: 1rem;
+    color: #60a5fa;
+}
+.philosophy-citation {
+    font-size: 0.8rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-style: italic;
+    font-weight: 300;
+}
+
+.philosophy-card {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 2rem;
+    border-radius: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.philosophy-card::before {
+    content: '"';
+    position: absolute;
+    top: -20px;
+    left: 10px;
+    font-size: 8rem;
+    color: rgba(255, 255, 255, 0.03);
+    font-family: serif;
+}
+
+.philosophy-number {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 3rem;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.1);
+}
+
+.philosophy-text {
+    line-height: 1.8;
+    color: #94a3b8;
+}
+
+.philosophy-principle {
+    font-weight: bold;
+    color: #1dfa00;
+    margin-bottom: 0.5rem;
+}
+
+
 @keyframes float {
     0% { transform: translate(0, 0) rotate(0deg); }
     50% { transform: translate(100px, 100px) rotate(180deg); }
@@ -397,5 +483,12 @@ footer {
 
     .hero p {
         font-size: 1.2rem;
+    }
+
+    .philosophy-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .philosophy-container {
+        gap: 0.5rem;
     }
 }
