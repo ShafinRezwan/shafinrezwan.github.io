@@ -164,13 +164,13 @@ nav {
     font-size: 30px;
     border-radius: 10px;    
     border: none;
+    transition: transform 0.4s ease, background-color 0.5s ease;
 }
 
 .mybtn:hover {
-    background: rgb(0, 89, 255);
+    background-color: rgb(0, 89, 255);
     color: rgb(253, 253, 253);
-    transition: transform 0.3s ease;
-    transform: scale(1.05);
+    transform: scale(1.1);
 }
 
 .projects-container {
@@ -183,17 +183,20 @@ nav {
 }
 
 .project-card {
-    background: white;
     border-radius: 20px;
     overflow: hidden;
     transform-style: preserve-3d;
     transform: perspective(1000px);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
 }
 
 .project-card:hover {
     transform: perspective(1000px) rotateX(5deg) rotateY(5deg);
+    background-color: rgb(207, 0, 0);
+    color: white;
+
 }
+
 
 .project-card img {
     width: 100%;
@@ -202,12 +205,34 @@ nav {
     transition: transform 0.3s ease;
 }
 
+
+
+
 .project-card:hover img {
     transform: scale(1.1);
 }
 
-.project-content {
-    padding: 2rem;
+
+.tags {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+}
+
+.tag {
+    background: rgba(115, 115, 115, 0.1);
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.875rem;
+    transition: size;
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.tag:hover {
+    transform: scale(1.2);
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
 }
 
 .skills-grid {
