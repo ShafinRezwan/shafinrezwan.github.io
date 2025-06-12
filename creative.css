@@ -191,11 +191,12 @@ nav {
     overflow: hidden;
     transform-style: preserve-3d;
     transform: perspective(1000px);
-    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease, padding 0.3s ease;
 }
 
 .project-card:hover {
     transform: perspective(1000px) rotateX(5deg) rotateY(5deg);
+    padding:10px;
     background-color: rgb(207, 0, 0);
     color: white;
 
