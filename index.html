@@ -1,222 +1,380 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shafin Rezwan Portfolio</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
-    <link rel="stylesheet" href="creative.css">
-    <style>
-        
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shafin Rezwan — Desktop Portfolio</title>
+  <link rel="stylesheet" type="text/css" href="creative.css"/>
 </head>
 <body>
-    <div class="cursor-glow"></div>
+  <div class="desktop">
+    <!-- Desktop Icons -->
+    <div class="icon-grid">
+      <div class="desktop-icon" data-window="about">
+        <div class="icon icon-about"></div>
+        <div class="icon-label">About me</div>
+      </div>
+      <div class="desktop-icon" data-window="resume">
+        <div class="icon icon-resume"></div>
+        <div class="icon-label">Resume</div>
+      </div>
+      <div class="desktop-icon" data-window="contact">
+        <div class="icon icon-contact"></div>
+        <div class="icon-label">Contact</div>
+      </div>
+      <div class="desktop-icon" data-window="projects">
+        <div class="icon icon-projects"></div>
+        <div class="icon-label">Projects</div>
+      </div>
+      <div class="desktop-icon" data-window="design">
+        <div class="icon icon-design"></div>
+        <div class="icon-label">Design</div>
+      </div>
+      <div class="desktop-icon" data-action="linkedin">
+        <div class="icon icon-linkedin"></div>
+        <div class="icon-label">LinkedIn</div>
+      </div>
+      <div class="desktop-icon" data-action="github">
+        <div class="icon icon-github"></div>
+        <div class="icon-label">GitHub</div>
+      </div>
+    </div>
 
-    <header>
-        <nav>
-            <div class="logo">  <a href="#home">Shafin Rezwan</a></div>
-            <div class="nav-links">
-                <a href="#resume">Resume</a>
-                <a href="#projects">Projects</a>
-                <a href="#skills">Skills</a>
-                <a href="#contact">Contact</a>
-            </div>
-        </nav>
-    </header>
-
-    <section class="hero">
-        <div class="floating-shapes">
-            <div class="shape" style="width: 50px; height: 50px; top: 20%; left: 20%;"></div>
-            <div class="shape" style="width: 70px; height: 70px; top: 60%; left: 80%;"></div>
-            <div class="shape" style="width: 40px; height: 40px; top: 80%; left: 40%;"></div>
+    <!-- About -->
+    <div id="about-window" class="window">
+      <div class="window-header">
+        <span>About Me</span>
+        <div class="window-controls">
+          <div class="window-button minimize">_</div>
+          <div class="window-button maximize">□</div>
+          <div class="window-button close">×</div>
         </div>
-        <div class="hero-content">
-            <h1 id="home">Web Developer</h1>
-            <p>Design enthusiast that loves merging the world of technology and art </p>
-            <div class="resume-container" id="resume">
-                <a href="Shafin Rezwan Resume June 2025.pdf" role="button"><button class="mybtn">Resume</button></a>
-            </div>
-            <div class="social-links">
-                <a href="https://github.com/ShafinRezwan"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/shafin-rezwan-b0415a203/"><i class="fab fa-linkedin"></i></a>
-                <a href="https://madeinbanglo.com"><i class="fa-solid fa-globe"></i></a>
-            </div>
-        </div>
-    </section>
+      </div>
+      <div class="window-content">
+        <div class="about-section">
+          <h2>Hi, I’m Shafin 👋</h2>
+          <p>
+            Full-stack developer and designer based in Edmonton. I build responsive, fast web apps and
+            clean interfaces, blending practical UX with a retro-inspired aesthetic. I’ve delivered projects
+            as a freelance Web Developer/Designer and work as a Sales Representative at TELUS, where I honed
+            problem-solving and client-facing skills.
+          </p>
 
-    <section id="projects" class="projects-container">  
-        <div class="project-card">
-            <a href="https://www.madeinbanglo.com"><img src="pbtbcoin.gif" alt="Project 1">
-            <div class="project-content">
-                <h3>Banglo Studios</h3>
-                <p>Designed and developed branding for a creative Studio</p></a>
-                <div class="tags">
-                    <span class="tag">E-commerce</span>
-                    <span class="tag">Wordpress</span>
-                    <span class="tag">AWS</span>
-                    <span class="tag">UX/UI</span>
+          <h3>Education</h3>
+          <p><strong>University of Alberta</strong> — B.Sc. Computer Science, Minor in Business (2018–2024)</p>
+
+          <h3>Core Skills</h3>
+          <div class="skill-grid">
+            <div class="skill-item">JavaScript / TypeScript</div>
+            <div class="skill-item">Python</div>
+            <div class="skill-item">React</div>
+            <div class="skill-item">HTML/CSS</div>
+            <div class="skill-item">SQL (Postgres)</div>
+            <div class="skill-item">MongoDB</div>
+            <div class="skill-item">Django</div>
+            <div class="skill-item">Flutter</div>
+            <div class="skill-item">WordPress / Liquid</div>
+            <div class="skill-item">Git + VS Code</div>
+            <div class="skill-item">Material-UI</div>
+            <div class="skill-item">UI/UX & Figma</div>
+          </div>
+        </div>
+      </div>
+      <div class="resize-handle"></div>
+    </div>
+
+    <!-- Resume -->
+    <div id="resume-window" class="window">
+      <div class="window-header">
+        <span>Resume — Shafin Rezwan</span>
+        <div class="window-controls">
+          <div class="window-button minimize">_</div>
+          <div class="window-button maximize">□</div>
+          <div class="window-button close">×</div>
+        </div>
+      </div>
+      <div class="window-content">
+        <div class="resume-content">
+          <div class="resume-header">
+            <div class="resume-actions">
+  <a href="Shafin Rezwan Resume July 2025.pdf" download class="download-btn" target="_blank" rel="noopener">
+    ⬇ Download PDF
+  </a>
+</div>
+
+            <div class="resume-name">Shafin Rezwan</div>
+            <div class="resume-title">Full-Stack Developer & Designer</div>
+            <div class="resume-contact">
+              📞 xxx-xxx-xxxx &nbsp;|&nbsp; 📧 <a href="mailto:srezwan@ualberta.ca">srezwan@ualberta.ca</a>
+              &nbsp;|&nbsp; 🌐 <a href="https://www.linkedin.com/in/shafin-rezwan-b0415a203/ target="_blank">linkedin.com/in/shafin-rezwan</a>
+              &nbsp;|&nbsp; 💻 <a href="https://github.com/shafinrezwan" target="_blank">github.com/shafinrezwan</a>
+            </div>
+          </div>
+
+          <div class="resume-section">
+            <h3>Professional Summary</h3>
+            <p style="color:#4b5563;font-size:13px;">
+              Developer with experience shipping responsive websites and tools, optimizing SEO
+              and performance, and collaborating cross-functionally from concept to launch.
+            </p>
+          </div>
+
+          <div class="resume-section">
+            <h3>Experience</h3>
+
+            <div class="resume-item">
+              <div class="resume-item-header">
+                <div>
+                  <div class="resume-position">Sales Representative</div>
+                  <div class="resume-company">TELUS — Edmonton, AB</div>
                 </div>
+                <div class="resume-date">Sept 2021 – Present</div>
+              </div>
+              <div class="resume-description">
+                • Handled high-traffic periods while identifying customer needs<br/>
+                • Built long-term client relationships and improved retention<br/>
+                • Adapted to changing market conditions with strong interpersonal skills
+              </div>
             </div>
-        </div>
-        <div class="project-card">
-            <a href="https://cielleofficiel.com/"><img src="cielle-pixel-animation.gif" alt="Project 2">
-            <div class="project-content">
-                <h3>Cielle</h3>
-                <p>Designed and developed e-commerce site for couture brand based in London </p></a>
-                <div class="tags">
-                    <span class="tag">E-commerce</span>
-                    <span class="tag">Shopify</span>
-                    <span class="tag">UX/UI</span>
-                    <span class="tag">Liquid</span>
-                    <span class="tag">Javascript</span>
+
+            <div class="resume-item">
+              <div class="resume-item-header">
+                <div>
+                  <div class="resume-position">Web Developer & Designer</div>
+                  <div class="resume-company">Freelance — Edmonton, AB</div>
                 </div>
+                <div class="resume-date">Jan 2022 – Present</div>
+              </div>
+              <div class="resume-description">
+                • Built responsive sites with HTML, CSS, JS, WordPress; improved SEO and page speed<br/>
+                • Led a small cross-functional team to scale delivery across clients<br/>
+                • Produced wireframes, prototypes, and mockups in Figma/Adobe XD
+              </div>
             </div>
-        </div>
-        <div class="project-card">
-            <a href="https://www.youtube.com/watch?v=ZemWwf8jh8E&ab_channel=UniversityofAlberta%3ACMPUT401"><img src="migrante_logo_small.png" alt="Project 3">
-            <div class="project-content">
-                <h3>Migrante Alberta</h3>
-                <p>Created a mobile app using flutter for a Canadian non profit</p></a>
-                <div class="tags">
-                    <span class="tag">Mobile App</span>
-                    <span class="tag">Flutter</span>
-                    <span class="tag">UX/UI</span>
-                    <span class="tag">Django</span>
-                    <span class="tag">PostgresSQL</span>
+
+            <div class="resume-item">
+              <div class="resume-item-header">
+                <div>
+                  <div class="resume-position">Digital Marketing Manager</div>
+                  <div class="resume-company">Foosh — Edmonton, AB</div>
                 </div>
+                <div class="resume-date">Oct 2022 – Dec 2023</div>
+              </div>
+              <div class="resume-description">
+                • Directed creative shoots and maintained brand aesthetics across platforms<br/>
+                • Designed assets for social, ads, and email using Figma, Photoshop, After Effects<br/>
+                • Drove ~400% increase in web store traffic via social + SEO cadence
+              </div>
             </div>
-        </div>
-        <div class="project-card">
-            <a href="https://www.foosh.ca/"><img src="Foosh.png" alt="Project 4">
-            <div class="project-content">
-                <h3>Foosh</h3>
-                <p>Designed and Developed a custom Shopify storefront for a streetwear botique in Edmonton </p></a>
-                <div class="tags">
-                    <span class="tag">E-commerce</span>
-                    <span class="tag">Shopify</span>
-                    <span class="tag">Liquid</span>
-                    <span class="tag">UX/UI</span>
-                    <span class="tag">Javascript</span>
+          </div>
+
+          <div class="resume-section">
+            <h3>Projects</h3>
+
+            <div class="resume-item">
+              <div class="resume-item-header">
+                <div>
+                  <div class="resume-position">TELUS Commission Calculator</div>
+                  <div class="resume-company">React, Supabase</div>
                 </div>
+                <div class="resume-date">June 2025</div>
+              </div>
+              <div class="resume-description">
+                • Custom commission tracking tool with real-time DB updates and responsive UI<br/>
+                • Centralized reference for compensation inquiries; improved agent satisfaction
+              </div>
             </div>
-        </div>
 
-        <div class="project-card">
-            <a href="https://www.illusivemedia.com/?fbclid=PAZXh0bgNhZW0CMTEAAaZ_uPkFyh2Yib4fchb6snknXzJ1S0Ue8LRzaZOu4AIDOPh84LhgB29Xx4Y_aem_NIXS48s9eM1mevdzdeF9tw"><img src="illusive-media.png" alt="Project 5">
-            <div class="project-content">
-                <h3>Illusive Media</h3>
-                <p>Designed and Developed a portfolio site to display various projects worked on by director Shomi Patwary </p></a>
-                <div class="tags">
-                    <span class="tag">React</span>
-                    <span class="tag">WebFlow</span>
-                    <span class="tag">AWS</span>
+            <div class="resume-item">
+              <div class="resume-item-header">
+                <div>
+                  <div class="resume-position">Migrante Alberta</div>
+                  <div class="resume-company">Python, Flutter, Django</div>
                 </div>
+                <div class="resume-date">Jan 2022 – Apr 2022</div>
+              </div>
+              <div class="resume-description">
+                • Full-stack mobile app connecting immigrants with support networks<br/>
+                • RESTful APIs in Django; Agile sprints with Git/Trello and usability testing
+              </div>
             </div>
-        </div>
-    </section>
+          </div>
 
-    <section id="skills" class="skills-grid">
-        <div class="skill-card">
-            <i class="fas fa-code"></i>
-            <h3>Frontend Mastery</h3>
-            <p>React, Javascript, Liquid, HTML, CSS</p>
-        </div>
-        <div class="skill-card">
-            <i class="fas fa-server"></i>
-            <h3>Backend Expertise</h3>
-            <p>Python, Node.js, SQL, PostgresSQL</p>
-        </div>
-        <div class="skill-card">
-            <i class="fas fa-database"></i>
-            <h3>Tools</h3>
-            <p>Git, MonogDB, SEO, Google Analytics, Microsoft Office</p>
-        </div>
-        <div class="skill-card">
-            <i class="fa-solid fa-paintbrush"></i>
-            <h3>Design</h3>
-            <p>Adobe XD, Figma, After Effects, Blender, AutoCAD</p>
-        </div>
-    </section>
-
-    <section class="philosophy-section" id="abloh-ism">
-        <h2 class="philosophy-title">Abloh-ism</h2>
-        <h3 class="philosophy-para">A collection of meaningful quotes I reflect on often, from one of my favourite artists; Virgil Abloh</h3>
-        <div class="philosophy-container">
-            <div class="philosophy-card">
-                <div class="philosophy-number">01</div>
-                <p class="philosophy-principle">"Question Everything"</p>
-                <p class="philosophy-quote">"Everything I do is for the 17-year-old version of myself."</p>
-                <p class="philosophy-text">Challenging conventional wisdom and approaching design with a beginner's mindset. This philosophy emphasizes the importance of maintaining curiosity and questioning established norms in pursuit of innovation.</p>
+          <div class="resume-section">
+            <h3>Technical Skills</h3>
+            <div class="resume-skills">
+              <div class="resume-skill">Python</div>
+              <div class="resume-skill">JavaScript / TypeScript</div>
+              <div class="resume-skill">SQL (Postgres)</div>
+              <div class="resume-skill">MongoDB</div>
+              <div class="resume-skill">React</div>
+              <div class="resume-skill">Django</div>
+              <div class="resume-skill">Flutter</div>
+              <div class="resume-skill">WordPress / Liquid</div>
+              <div class="resume-skill">Material-UI</div>
+              <div class="resume-skill">HTML/CSS</div>
+              <div class="resume-skill">Git • VS Code • PyCharm</div>
             </div>
-
-            <div class="philosophy-card">
-                <div class="philosophy-number">02</div>
-                <p class="philosophy-principle">"Tourist vs. Purist"</p>
-                <p class="philosophy-quote">"In the end we're all tourists, and that's okay."</p>
-                <p class="philosophy-text">Celebrating the value of both expert knowledge and fresh perspectives. This principle encourages designers to maintain their curiosity while developing expertise, finding balance between innovation and tradition.</p>
-            </div>
+          </div>
         </div>
-        <h3 class="philosophy-citation">Citation (MLA): Abloh, Virgil. Abloh-Isms. Edited by Larry Warsh, Princeton University Press, 2021. JSTOR, https://doi.org/10.2307/j.ctv173f27w. Accessed 24 Nov. 2024.</h3>
+      </div>
+      <div class="resize-handle"></div>
+    </div>
 
-    </section>
-
-    <section id="contact" class="contact-section">
-        <div class="contact-form">
-            <h2>Let's Create Something Amazing</h2>
-            <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" id="name" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" required>
-            </div>
-            <div class="form-group">
-                <label for="message">Message</label>
-                <textarea id="message" rows="5" required></textarea>
-            </div>
-            <button type="submit" class="submit-btn">Send Message</button>
+    <!-- Contact -->
+    <div id="contact-window" class="window">
+      <div class="window-header">
+        <span>Contact Me</span>
+        <div class="window-controls">
+          <div class="window-button minimize">_</div>
+          <div class="window-button maximize">□</div>
+          <div class="window-button close">×</div>
         </div>
-    </section>
+      </div>
+      <div class="window-content">
+        <h2>Get In Touch</h2>
+        <p>Best way to reach me is email or LinkedIn. I’m open to freelance work and collaborations.</p>        
 
-    <footer>
-        <div class="social-links">
-            <a href="https://github.com/ShafinRezwan"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/shafin-rezwan-b0415a203/"><i class="fab fa-linkedin"></i></a>
-            <a href="https://madeinbanglo.com"><i class="fa-solid fa-globe"></i></a>
+         <div class="social-links">
+          <a href="mailto:srezwan@ualberta.ca" class="social-link">Email</a>
+          <a href="https://www.linkedin.com/in/shafin-rezwan-b0415a203/" target="_blank" class="social-link">LinkedIn</a>
+          <a href="https://github.com/ShafinRezwan" target="_blank" class="social-link">GitHub</a>
         </div>
-        <p>Shafin Rezwan | 2024</p>
-    </footer>
+        <br/>
+        <form class="contact-form" onsubmit="handleSubmit(event)">
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input id="name" name="name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input id="email" name="email" type="email" required />
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject:</label>
+            <input id="subject" name="subject" required />
+          </div>
+          <div class="form-group">
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+          <button type="submit" class="submit-btn">Send Message</button>
+        </form>
 
-    <script>
-        // Cursor glow effect
-        document.addEventListener('mousemove', (e) => {
-            const cursor = document.querySelector('.cursor-glow');
-            cursor.style.left = e.clientX + 'px';
-            cursor.style.top = e.clientY + 'px';
-        });
+       
+      </div>
+      <div class="resize-handle"></div>
+    </div>
 
-        // Project card tilt effect
-        document.querySelectorAll('.project-card').forEach(card => {
-            card.addEventListener('mousemove', (e) => {
-                const rect = card.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                
-                const centerX = rect.width / 2;
-                const centerY = rect.height / 2;
-                
-                const rotateX = (y - centerY) / 20;
-                const rotateY = (centerX - x) / 20;
-                
-                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-            });
-            
-            card.addEventListener('mouseleave', () => {
-                card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
-            });
-        });
-    </script>
+    <!-- Projects -->
+    <div id="projects-window" class="window">
+      <div class="window-header">
+        <span>Projects</span>
+        <div class="window-controls">
+          <div class="window-button minimize">_</div>
+          <div class="window-button maximize">□</div>
+          <div class="window-button close">×</div>
+        </div>
+      </div>
+      <div class="window-content">
+        <h2>Selected Projects</h2>
+
+        <div class="project-item">
+          <div class="project-title"><a href="https://github.com/ShafinRezwan/Telus-Commision-Calculator">TELUS Commission Calculator</a> (React, Supabase)</div>
+          <p>
+            Custom commission tracking app with real-time updates and a responsive UI to improve
+            order visibility and pay transparency for agents.
+          </p>
+          <div class="tech-stack">
+            <span class="tech-badge react">React</span>
+            <span class="tech-badge supabase">Supabase</span>
+        </div>
+        </div>
+
+         <div class="project-item">
+          <div class="project-title"> <img src="pbtbcoin.gif" width="45px"/><a href="https://https://madeinbanglo.com/">madeinbanglo.com </a> (Wordpress, AWS)</div>
+         
+          <p>
+            Designed and developed woocommerce shop for e-commerce business.
+          </p>
+          <div class="tech-stack">
+            <span class="tech-badge wordpress">WordPress</span>
+            <span class="tech-badge aws">AWS</span>
+        </div>
+        </div>
+
+        <div class="project-item">
+          <div class="project-title"><img src="migrante_logo_small.png" width="45px"/><a href="https://cmput401.ca/projects/e5b13586-09c7-4ddd-baf6-fdb078d23398"> Migrante Alberta </a></div>
+          <p>
+            Mobile app and backend connecting immigrants to hospitals, charities, and community
+            support networks via secure REST APIs.
+          </p>
+          <div class="tech-stack">
+            <span class="tech-badge python">Python</span>
+            <span class="tech-badge flutter">Flutter</span>
+            <span class="tech-badge django">Django</span>
+        </div>
+        </div>
+
+         <div class="project-item">
+          <div class="project-title"><img src="Foosh.png" width="45px"/><a href="https://www.foosh.ca/">FOOSH </a> (E-commerce, Shopify, Liquid, UX/UI, JavaScript)</div>
+          <p>
+            Designed and developed a custom Shopify e-commerce storefront for a streetwear boutique in Edmonton.
+          </p>
+          <div class="tech-stack">
+            <span class="tech-badge ecommerce">E-commerce</span>
+            <span class="tech-badge shopify">Shopify</span>
+            <span class="tech-badge liquid">Liquid</span>
+            <span class="tech-badge ux">UX/UI</span>
+            <span class="tech-badge javascript">JavaScript</span>
+        </div>
+         </div>
+      </div>
+      <div class="resize-handle"></div>
+    </div>
+
+    <!-- Design -->
+    <div id="design-window" class="window">
+      <div class="window-header">
+        <span>Design Projects</span>
+        <div class="window-controls">
+          <div class="window-button minimize">_</div>
+          <div class="window-button maximize">□</div>
+          <div class="window-button close">×</div>
+        </div>
+      </div>
+      <div class="window-content">
+        <h2>Design Portfolio</h2>
+        <p>Branding, web, and mobile UI work. More coming soon.</p>
+        <div class="design-gallery">
+          <div class="design-item"><div class="design-placeholder" style="background: linear-gradient(45deg,#ef4444,#f97316);"></div><div>Brand Identity</div></div>
+          <div class="design-item"><div class="design-placeholder" style="background: linear-gradient(45deg,#3b82f6,#8b5cf6);"></div><div>Web Design</div></div>
+          <div class="design-item"><div class="design-placeholder" style="background: linear-gradient(45deg,#10b981,#06b6d4);"></div><div>Mobile UI</div></div>
+          <div class="design-item"><div class="design-placeholder" style="background: linear-gradient(45deg,#f59e0b,#eab308);"></div><div>Illustrations</div></div>
+        </div>
+      </div>
+      <div class="resize-handle"></div>
+    </div>
+
+    <!-- Taskbar -->
+    <div class="taskbar">
+      <button class="start-button">Start</button>
+      <div class="taskbar-spacer"></div>
+      <div class="time">20:03</div>
+    </div>
+
+    <!-- Start Menu -->
+    <div class="start-menu" id="start-menu">
+      <div class="start-menu-item" onclick="openWindow('about')">About me</div>
+      <div class="start-menu-item" onclick="openWindow('resume')">Resume</div>
+      <div class="start-menu-item" onclick="openWindow('contact')">Contact</div>
+      <div class="start-menu-item" onclick="openWindow('projects')">Projects</div>
+      <div class="start-menu-item" onclick="openWindow('design')">Design</div>
+      <div class="start-menu-item" onclick="window.open('https://www.linkedin.com/in/shafin-rezwan-b0415a203/','_blank')">LinkedIn</div>
+      <div class="start-menu-item" onclick="window.open('https://github.com/ShafinRezwan','_blank')">GitHub</div>
+    </div>
+  </div>
+
+      <script src="script.js"></script>
 </body>
 </html>
