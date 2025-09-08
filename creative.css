@@ -127,16 +127,50 @@ body {
   max-height: calc(80vh - 40px); /* scroll inside */
   overflow-y: auto;
 }
-
+/* The resume window itself */
 #resume-window {
-  max-height: 80vh;
-  overflow: hidden;
+  width: 900px;
+  height: 80vh; /* use viewport height */
+  max-height: 90vh;
+  overflow: hidden; /* keep borders clean */
 }
 
+/* Make the content area a flex column that can shrink */
 #resume-window .window-content {
-  height: auto; /* override the global height */
-  max-height: calc(80vh - 40px); /* scroll inside */
-  overflow-y: auto;
+  padding: 0; /* edge-to-edge viewer */
+  flex: 1 1 auto; /* take remaining space under header */
+  min-height: 0; /* <-- critical so children can shrink */
+  overflow: hidden; /* avoid double scrollbars */
+}
+
+/* Optional: explicit class if you keep it */
+#resume-window .window-content.resume-viewer {
+  display: flex;
+  flex-direction: column;
+  /* flex/min-height/overflow already set above */
+}
+
+#resume-window .resize-handle {
+  width: 24px; /* bigger grip */
+  height: 24px;
+  opacity: 0.9; /* optional: more visible */
+}
+
+.viewer-toolbar {
+  flex: 0 0 auto;
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  background: #eef2ff;
+  border-bottom: 1px solid #c7d2fe;
+}
+
+/* The PDF takes the rest */
+.pdf-frame {
+  flex: 1 1 auto;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
 
 .resume-content {
@@ -370,6 +404,10 @@ body {
   line-height: 1.2;
 }
 
+#about-window {
+  width: 600px; /* starting width */
+  height: 400px;
+}
 /* Pixel-style icons using CSS */
 .icon-about {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" fill="%23f3f4f6"/><rect x="8" y="8" width="16" height="16" fill="%236b7280"/><rect x="12" y="12" width="8" height="2" fill="%23f3f4f6"/><rect x="12" y="16" width="8" height="2" fill="%23f3f4f6"/><rect x="12" y="20" width="8" height="2" fill="%23f3f4f6"/></svg>');
@@ -400,6 +438,7 @@ body {
 }
 
 .window {
+  overflow: hidden;
   position: absolute;
   background: #f3f4f6;
   border: 2px outset #d1d5db;
@@ -415,6 +454,7 @@ body {
 }
 
 .window-header {
+  touch-action: none;
   background: linear-gradient(90deg, #8b5cf6, #a855f7);
   color: white;
   padding: 8px 12px;
@@ -459,6 +499,7 @@ body {
 }
 
 .window-content {
+  overflow: auto;
   padding: 20px;
   height: calc(100% - 40px);
   background: #f9fafb;
@@ -632,4 +673,22 @@ p {
   height: 60px;
   background: #9ca3af;
   margin-bottom: 8px;
+}
+
+@media (max-width: 768px) {
+  .window {
+    min-width: auto;
+    width: 95vw;
+    max-width: 95vw;
+    height: calc(85vh - 40px); /* keep taskbar visible */
+    max-height: calc(85vh - 40px);
+  }
+  .resize-handle {
+    display: none;
+  } /* disable resize on mobile */
+
+  #resume-window {
+    width: 95vw;
+    height: calc(85vh - 40px); /* keep taskbar visible */
+  }
 }

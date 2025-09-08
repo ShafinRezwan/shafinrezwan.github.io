@@ -44,26 +44,85 @@ document.addEventListener("click", function (e) {
 });
 
 function openWindow(windowId) {
-  const window = document.getElementById(windowId + "-window");
-  if (window) {
-    // Check if window is minimized, restore it
-    if (minimizedWindows.has(windowId)) {
-      restoreWindow(windowId);
-      return;
-    }
+  const win = document.getElementById(windowId + "-window");
+  if (!win) return;
 
-    window.style.display = "block";
-    window.style.zIndex = ++zIndexCounter;
-
-    // Position window randomly if not positioned
-    if (!window.style.left) {
-      window.style.left = Math.random() * 200 + 100 + "px";
-      window.style.top = Math.random() * 100 + 50 + "px";
-    }
-
-    setActiveWindow(window);
-    addToTaskbar(windowId);
+  // restore if minimized
+  if (minimizedWindows.has(windowId)) {
+    restoreWindow(windowId);
+    return;
   }
+
+  // show and bring to front
+  win.style.display = "block";
+  win.style.zIndex = ++zIndexCounter;
+
+  // if no position set yet, choose a sensible one
+  const isMobile = window.innerWidth <= 768;
+  if (!win.style.left || !win.style.top) {
+    if (isMobile) {
+      // mobile: make it fit and center
+      win.style.width = "95vw";
+      win.style.height = "calc(85vh - 40px)";
+      centerWindow(win);
+    } else {
+      // desktop: random-ish then clamp
+      win.style.left = Math.random() * 200 + 100 + "px";
+      win.style.top = Math.random() * 100 + 50 + "px";
+      clampWindowToViewport(win);
+    }
+  } else {
+    // ensure previous positions are still visible in current viewport
+    clampWindowToViewport(win);
+  }
+
+  setActiveWindow(win);
+  addToTaskbar(windowId);
+}
+
+const TASKBAR_HEIGHT = 40;
+
+function clamp(n, min, max) {
+  return Math.min(Math.max(n, min), max);
+}
+
+function clampWindowToViewport(win) {
+  const vw = window.innerWidth;
+  const vh = window.innerHeight;
+  const rect = win.getBoundingClientRect();
+
+  const maxLeft = Math.max(0, vw - rect.width);
+  const maxTop = Math.max(0, vh - rect.height - TASKBAR_HEIGHT);
+
+  const left = clamp(
+    parseInt(win.style.left || rect.left, 10) || 0,
+    0,
+    maxLeft
+  );
+  const top = clamp(parseInt(win.style.top || rect.top, 10) || 0, 0, maxTop);
+
+  win.style.left = left + "px";
+  win.style.top = top + "px";
+}
+
+function centerWindow(win) {
+  win.style.display = "block"; // must be visible to measure
+  // give the browser a tick to layout (safer on iOS)
+  const rect = win.getBoundingClientRect();
+  const vw = window.innerWidth;
+  const vh = window.innerHeight;
+  const left = clamp(
+    Math.round((vw - rect.width) / 2),
+    0,
+    Math.max(0, vw - rect.width)
+  );
+  const top = clamp(
+    Math.round((vh - rect.height) / 3),
+    0,
+    Math.max(0, vh - rect.height - TASKBAR_HEIGHT)
+  );
+  win.style.left = left + "px";
+  win.style.top = top + "px";
 }
 
 function addToTaskbar(windowId) {
@@ -182,75 +241,146 @@ function setActiveWindow(window) {
 }
 
 // Window controls
-document.querySelectorAll(".window").forEach((window) => {
-  const header = window.querySelector(".window-header");
-  const closeBtn = window.querySelector(".close");
-  const minimizeBtn = window.querySelector(".minimize");
-  const resizeHandle = window.querySelector(".resize-handle");
+document.querySelectorAll(".window").forEach((win) => {
+  const header = win.querySelector(".window-header");
+  const closeBtn = win.querySelector(".close");
+  const minimizeBtn = win.querySelector(".minimize");
+  const resizeHandle = win.querySelector(".resize-handle");
+  const maximizeBtn = win.querySelector(".maximize");
 
-  // Make window active on click
-  window.addEventListener("mousedown", function () {
+  // Bring to front on mousedown/touch
+  win.addEventListener("pointerdown", function () {
     setActiveWindow(this);
     this.style.zIndex = ++zIndexCounter;
   });
 
-  // Close window
+  // Close
   closeBtn.addEventListener("click", function () {
-    const windowId = window.id.replace("-window", "");
-    window.style.display = "none";
+    const windowId = win.id.replace("-window", "");
+    win.style.display = "none";
     minimizedWindows.delete(windowId);
     removeFromTaskbar(windowId);
-
-    // Set next window as active
-    const visibleWindows = document.querySelectorAll(
+    const visible = document.querySelectorAll(
       '.window[style*="display: block"]'
     );
-    if (visibleWindows.length > 0) {
-      setActiveWindow(visibleWindows[visibleWindows.length - 1]);
-    } else {
-      activeWindow = null;
-    }
+    if (visible.length > 0) setActiveWindow(visible[visible.length - 1]);
+    else activeWindow = null;
   });
 
-  // Minimize window
+  // Minimize
   minimizeBtn.addEventListener("click", function () {
-    const windowId = window.id.replace("-window", "");
+    const windowId = win.id.replace("-window", "");
     minimizeWindow(windowId);
   });
 
-  // Dragging functionality
-  header.addEventListener("mousedown", function (e) {
-    if (e.target.classList.contains("window-button")) return;
+  // (Optional) Maximize toggle
+  if (maximizeBtn) {
+    maximizeBtn.addEventListener("click", function () {
+      const isMax = win.classList.toggle("maximized");
+      if (isMax) {
+        win.dataset.prevLeft = win.style.left;
+        win.dataset.prevTop = win.style.top;
+        win.dataset.prevWidth = getComputedStyle(win).width;
+        win.dataset.prevHeight = getComputedStyle(win).height;
+        win.style.left = "0px";
+        win.style.top = "0px";
+        win.style.width = "100vw";
+        win.style.height = "calc(100vh - 40px)";
+      } else {
+        win.style.left = win.dataset.prevLeft || "100px";
+        win.style.top = win.dataset.prevTop || "60px";
+        win.style.width = win.dataset.prevWidth || "600px";
+        win.style.height = win.dataset.prevHeight || "400px";
+        clampWindowToViewport(win);
+      }
+    });
+  }
 
+  // ---- DRAGGING (pointer events) ----
+  header.addEventListener("pointerdown", function (e) {
+    if (e.target.classList.contains("window-button")) return;
     isDragging = true;
     startX = e.clientX;
     startY = e.clientY;
-    startLeft = parseInt(window.style.left) || 0;
-    startTop = parseInt(window.style.top) || 0;
+    startLeft = parseInt(win.style.left) || 0;
+    startTop = parseInt(win.style.top) || 0;
 
-    setActiveWindow(window);
-    window.style.zIndex = ++zIndexCounter;
+    setActiveWindow(win);
+    win.style.zIndex = ++zIndexCounter;
 
+    // capture pointer to keep receiving move events
+    header.setPointerCapture(e.pointerId);
     e.preventDefault();
   });
 
-  // Resizing functionality
-  resizeHandle.addEventListener("mousedown", function (e) {
-    isResizing = true;
-    startX = e.clientX;
-    startY = e.clientY;
-    startWidth = parseInt(
-      document.defaultView.getComputedStyle(window).width,
-      10
-    );
-    startHeight = parseInt(
-      document.defaultView.getComputedStyle(window).height,
-      10
+  header.addEventListener(
+    "pointermove",
+    function (e) {
+      if (!isDragging) return;
+      const newLeft = startLeft + (e.clientX - startX);
+      const newTop = startTop + (e.clientY - startY);
+
+      // clamp within viewport
+      const rect = win.getBoundingClientRect();
+      const maxLeft = Math.max(0, window.innerWidth - rect.width);
+      const maxTop = Math.max(
+        0,
+        window.innerHeight - rect.height - TASKBAR_HEIGHT
+      );
+
+      win.style.left = clamp(newLeft, 0, maxLeft) + "px";
+      win.style.top = clamp(newTop, 0, maxTop) + "px";
+
+      e.preventDefault(); // prevent page from scrolling while dragging
+    },
+    { passive: false }
+  );
+
+  header.addEventListener("pointerup", function (e) {
+    isDragging = false;
+    header.releasePointerCapture(e.pointerId);
+  });
+
+  // ---- RESIZING (pointer events) ----
+  if (resizeHandle) {
+    resizeHandle.addEventListener("pointerdown", function (e) {
+      // skip resize on small screens (we disabled the handle in CSS too)
+      if (window.innerWidth <= 768) return;
+
+      isResizing = true;
+      startX = e.clientX;
+      startY = e.clientY;
+      startWidth = parseInt(getComputedStyle(win).width, 10);
+      startHeight = parseInt(getComputedStyle(win).height, 10);
+
+      resizeHandle.setPointerCapture(e.pointerId);
+      e.preventDefault();
+      e.stopPropagation();
+    });
+
+    resizeHandle.addEventListener(
+      "pointermove",
+      function (e) {
+        if (!isResizing) return;
+        const newWidth = startWidth + (e.clientX - startX);
+        const newHeight = startHeight + (e.clientY - startY);
+        win.style.width = Math.max(300, newWidth) + "px";
+        win.style.height = Math.max(200, newHeight) + "px";
+        clampWindowToViewport(win);
+        e.preventDefault();
+      },
+      { passive: false }
     );
 
-    e.preventDefault();
-    e.stopPropagation();
-  });
+    resizeHandle.addEventListener("pointerup", function (e) {
+      isResizing = false;
+      resizeHandle.releasePointerCapture(e.pointerId);
+    });
+  }
+});
+
+window.addEventListener("resize", () => {
+  document.querySelectorAll(".window").forEach(clampWindowToViewport);
 });
 
 // Mouse move handlers
@@ -341,4 +471,9 @@ document.addEventListener("click", function (e) {
     setActiveWindow(clickedWindow);
     clickedWindow.style.zIndex = ++zIndexCounter;
   }
+});
+
+// Auto-open About Me when the site finishes loading
+window.addEventListener("load", () => {
+  openWindow("about");
 });
