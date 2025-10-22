@@ -1,299 +1,394 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Shafin Rezwan — Desktop Portfolio</title>
-  <link rel="stylesheet" type="text/css" href="creative.css"/>
-</head>
-<body>
-  <div class="desktop">
-    <!-- Desktop Icons -->
-    <div class="icon-grid">
-      <div class="desktop-icon" data-window="about">
-        <div class="icon icon-about"></div>
-        <div class="icon-label">About me</div>
-      </div>
-      <div class="desktop-icon" data-window="resume">
-        <div class="icon icon-resume"></div>
-        <div class="icon-label">Resume</div>
-      </div>
-      <div class="desktop-icon" data-window="contact">
-        <div class="icon icon-contact"></div>
-        <div class="icon-label">Contact</div>
-      </div>
-      <div class="desktop-icon" data-window="projects">
-        <div class="icon icon-projects"></div>
-        <div class="icon-label">Projects</div>
-      </div>
-      <div class="desktop-icon" data-window="design">
-        <div class="icon icon-design"></div>
-        <div class="icon-label">Design</div>
-      </div>
-      <div class="desktop-icon" data-action="linkedin">
-        <div class="icon icon-linkedin"></div>
-        <div class="icon-label">LinkedIn</div>
-      </div>
-      <div class="desktop-icon" data-action="github">
-        <div class="icon icon-github"></div>
-        <div class="icon-label">GitHub</div>
-      </div>
-    </div>
-
-    <!-- About -->
-    <div id="about-window" class="window">
-      <div class="window-header">
-        <span>About Me</span>
-        <div class="window-controls">
-          <div class="window-button minimize">_</div>
-          <div class="window-button maximize">□</div>
-          <div class="window-button close">×</div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shafin Rezwan — Desktop Portfolio</title>
+    <link rel="stylesheet" type="text/css" href="creative.css" />
+  </head>
+  <body>
+    <div class="desktop">
+      <!-- Desktop Icons -->
+      <div class="icon-grid">
+        <div class="desktop-icon" data-window="about">
+          <div class="icon icon-about"></div>
+          <div class="icon-label">About me</div>
+        </div>
+        <div class="desktop-icon" data-window="resume">
+          <div class="icon icon-resume"></div>
+          <div class="icon-label">Resume</div>
+        </div>
+        <div class="desktop-icon" data-window="contact">
+          <div class="icon icon-contact"></div>
+          <div class="icon-label">Contact</div>
+        </div>
+        <div class="desktop-icon" data-window="projects">
+          <div class="icon icon-projects"></div>
+          <div class="icon-label">Projects</div>
+        </div>
+        <div class="desktop-icon" data-window="design">
+          <div class="icon icon-design"></div>
+          <div class="icon-label">Design</div>
+        </div>
+        <div class="desktop-icon" data-action="linkedin">
+          <div class="icon icon-linkedin"></div>
+          <div class="icon-label">LinkedIn</div>
+        </div>
+        <div class="desktop-icon" data-action="github">
+          <div class="icon icon-github"></div>
+          <div class="icon-label">GitHub</div>
         </div>
       </div>
-      <div class="window-content">
-        <div class="about-section">
-          <h2>Hi, I’m Shafin 👋</h2>
-          <p>
-            Full-stack developer and designer based in Edmonton. I build responsive, fast web apps and
-            clean interfaces, blending practical UX with a retro-inspired aesthetic. I’ve delivered projects
-            as a freelance Web Developer/Designer and work as a Sales Representative at TELUS, where I honed
-            problem-solving and client-facing skills.
-          </p>
 
-          <h3>Education</h3>
-          <p><strong>University of Alberta</strong> — B.Sc. Computer Science, Minor in Business (2018–2024)</p>
-
-          <h3>Core Skills</h3>
-          <div class="skill-grid">
-            <div class="skill-item tech-badge javascript ">JavaScript / TypeScript</div>
-            <div class="skill-item tech-badge python">Python</div>
-            <div class="skill-item tech-badge react">React</div>
-            <div class="skill-item">HTML/CSS</div>
-            <div class="skill-item tech-badge tailwindcss">Tailwind Css</div>
-            <div class="skill-item">Material-UI</div>
-            <div class="skill-item tech-badge sql">SQL (Postgres)</div>
-            <div class="skill-item tech-badge mongodb">MongoDB</div>
-            <div class="skill-item tech-badge django">Django</div>
-            <div class="skill-item tech-badge flutter">Flutter</div>
-            <div class="skill-item tech-badge wordpress">WordPress / Liquid</div>
-            <div class="skill-item tech-badge ux">UI/UX & Figma</div>
-            <div class="skill-item tech-badge docker">Docker & Kubernetes</div>
-            <div class="skill-item">Git + VS Code</div>
-
+      <!-- About -->
+      <div id="about-window" class="window">
+        <div class="window-header">
+          <span>About Me</span>
+          <div class="window-controls">
+            <div class="window-button minimize">_</div>
+            <div class="window-button maximize">□</div>
+            <div class="window-button close">×</div>
           </div>
         </div>
-      </div>
-      <div class="resize-handle"></div>
-    </div>
+        <div class="window-content">
+          <div class="about-section">
+            <h2>Hi, I’m Shafin 👋</h2>
+            <p>
+              Full-stack developer and designer based in Edmonton. I build
+              responsive, fast web apps and clean interfaces, blending practical
+              UX with a retro-inspired aesthetic. I’ve delivered projects as a
+              freelance Web Developer/Designer and work as a Sales
+              Representative at TELUS, where I honed problem-solving and
+              client-facing skills.
+            </p>
 
-<!-- Resume -->
-<div id="resume-window" class="window">
-  <div class="window-header">
-    <span>Resume — Shafin Rezwan</span>
-    <div class="window-controls">
-      <div class="window-button minimize">_</div>
-      <div class="window-button maximize">□</div>
-      <div class="window-button close">×</div>
-    </div>
-  </div>
+            <h3>Education</h3>
+            <p>
+              <strong>University of Alberta</strong> — B.Sc. Computer Science,
+              Minor in Business (2018–2024)
+            </p>
 
-  <div class="window-content resume-viewer">
-    <!-- Toolbar -->
-    <div class="viewer-toolbar">
-      <a href="srezwan_developer_resume.pdf" 
-         download 
-         class="download-btn" 
-         target="_blank" 
-         rel="noopener">
-        ⬇ Download PDF
-      </a>
-      <a href="srezwan_developer_resume.pdf" 
-         target="_blank" 
-         rel="noopener" 
-         class="download-btn">
-        ↗ Open in New Tab
-      </a>
-    </div>
-
-    <!-- Built-in PDF viewer -->
-    <iframe
-      class="pdf-frame"
-      src="srezwan_developer_resume.pdf#view=fitH&zoom=page-width"
-      title="Resume PDF">
-    </iframe>
-  </div>
-  <div class="resize-handle"></div>
-</div>
-
-
-    <!-- Contact -->
-    <div id="contact-window" class="window">
-      <div class="window-header">
-        <span>Contact Me</span>
-        <div class="window-controls">
-          <div class="window-button minimize">_</div>
-          <div class="window-button maximize">□</div>
-          <div class="window-button close">×</div>
-        </div>
-      </div>
-      <div class="window-content">
-        <h2>Get In Touch</h2>
-        <p>Best way to reach me is email or LinkedIn. I’m open to freelance work and collaborations.</p>        
-
-         <div class="social-links">
-          <a href="mailto:srezwan@ualberta.ca" class="social-link">Email</a>
-          <a href="https://www.linkedin.com/in/shafin-rezwan-b0415a203/" target="_blank" class="social-link">LinkedIn</a>
-          <a href="https://github.com/ShafinRezwan" target="_blank" class="social-link">GitHub</a>
-        </div>
-        <br/>
-        <form class="contact-form" onsubmit="handleSubmit(event)">
-          <div class="form-group">
-            <label for="name">Name:</label>
-            <input id="name" name="name" required />
+            <h3>Core Skills</h3>
+            <div class="skill-grid">
+              <div class="skill-item tech-badge javascript">
+                JavaScript / TypeScript
+              </div>
+              <div class="skill-item tech-badge python">Python</div>
+              <div class="skill-item tech-badge react">React</div>
+              <div class="skill-item">HTML/CSS</div>
+              <div class="skill-item tech-badge tailwindcss">Tailwind Css</div>
+              <div class="skill-item">Material-UI</div>
+              <div class="skill-item tech-badge sql">SQL (Postgres)</div>
+              <div class="skill-item tech-badge mongodb">MongoDB</div>
+              <div class="skill-item tech-badge django">Django</div>
+              <div class="skill-item tech-badge flutter">Flutter</div>
+              <div class="skill-item tech-badge wordpress">
+                WordPress / Liquid
+              </div>
+              <div class="skill-item tech-badge ux">UI/UX & Figma</div>
+              <div class="skill-item tech-badge docker">
+                Docker & Kubernetes
+              </div>
+              <div class="skill-item">Git + VS Code</div>
+            </div>
           </div>
-          <div class="form-group">
-            <label for="email">Email:</label>
-            <input id="email" name="email" type="email" required />
+        </div>
+        <div class="resize-handle"></div>
+      </div>
+
+      <!-- Resume -->
+      <div id="resume-window" class="window">
+        <div class="window-header">
+          <span>Resume — Shafin Rezwan</span>
+          <div class="window-controls">
+            <div class="window-button minimize">_</div>
+            <div class="window-button maximize">□</div>
+            <div class="window-button close">×</div>
           </div>
-          <div class="form-group">
-            <label for="subject">Subject:</label>
-            <input id="subject" name="subject" required />
+        </div>
+
+        <div class="window-content resume-viewer">
+          <!-- Toolbar -->
+          <div class="viewer-toolbar">
+            <a
+              href="srezwan_developer_resume.pdf"
+              download
+              class="download-btn"
+              target="_blank"
+              rel="noopener"
+            >
+              ⬇ Download PDF
+            </a>
+            <a
+              href="srezwan_developer_resume.pdf"
+              target="_blank"
+              rel="noopener"
+              class="download-btn"
+            >
+              ↗ Open in New Tab
+            </a>
           </div>
-          <div class="form-group">
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
+
+          <!-- Built-in PDF viewer -->
+          <iframe
+            class="pdf-frame"
+            src="srezwan_developer_resume.pdf#view=fitH&zoom=page-width"
+            title="Resume PDF"
+          >
+          </iframe>
+        </div>
+        <div class="resize-handle"></div>
+      </div>
+
+      <!-- Contact -->
+      <div id="contact-window" class="window">
+        <div class="window-header">
+          <span>Contact Me</span>
+          <div class="window-controls">
+            <div class="window-button minimize">_</div>
+            <div class="window-button maximize">□</div>
+            <div class="window-button close">×</div>
           </div>
-          <button type="submit" class="submit-btn">Send Message</button>
-        </form>
+        </div>
+        <div class="window-content">
+          <h2>Get In Touch</h2>
+          <p>
+            Best way to reach me is email or LinkedIn. I’m open to freelance
+            work and collaborations.
+          </p>
 
-       
+          <div class="social-links">
+            <a href="mailto:srezwan@ualberta.ca" class="social-link">Email</a>
+            <a
+              href="https://www.linkedin.com/in/shafin-rezwan-b0415a203/"
+              target="_blank"
+              class="social-link"
+              >LinkedIn</a
+            >
+            <a
+              href="https://github.com/ShafinRezwan"
+              target="_blank"
+              class="social-link"
+              >GitHub</a
+            >
+          </div>
+          <br />
+          <form class="contact-form" onsubmit="handleSubmit(event)">
+            <div class="form-group">
+              <label for="name">Name:</label>
+              <input id="name" name="name" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input id="email" name="email" type="email" required />
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject:</label>
+              <input id="subject" name="subject" required />
+            </div>
+            <div class="form-group">
+              <label for="message">Message:</label>
+              <textarea id="message" name="message" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Send Message</button>
+          </form>
+        </div>
+        <div class="resize-handle"></div>
       </div>
-      <div class="resize-handle"></div>
+
+      <!-- Projects -->
+      <div id="projects-window" class="window">
+        <div class="window-header">
+          <span>Projects</span>
+          <div class="window-controls">
+            <div class="window-button minimize">_</div>
+            <div class="window-button maximize">□</div>
+            <div class="window-button close">×</div>
+          </div>
+        </div>
+
+        <div class="window-content">
+          <h2>Selected Projects</h2>
+
+          <div class="project-item">
+            <div class="project-title">
+              <a
+                href="https://github.com/ShafinRezwan/Telus-Commision-Calculator"
+                >TELUS Commission Calculator</a
+              >
+            </div>
+            <p>
+              Custom commission tracking app with real-time updates and a
+              responsive UI to improve order visibility and pay transparency for
+              agents.
+            </p>
+            <div class="tech-stack">
+              <span class="tech-badge react">React</span>
+              <span class="tech-badge supabase">Supabase</span>
+            </div>
+          </div>
+
+          <div class="project-item">
+            <div class="project-title">
+              <a href="https://github.com/ShafinRezwan/TailorScore"
+                >TailorScore</a
+              >
+            </div>
+            <p>
+              Ai Resume analyzer that returns an ATS score and resume feedback
+              relative to the job you want to apply for!
+            </p>
+            <p>Used Claude-Sonnet model for the ai analysis of resumes.</p>
+            <div class="tech-stack">
+              <span class="tech-badge react">React</span>
+              <span class="tech-badge typescript">TypeScript</span>
+              <span class="tech-badge tailwindcss">TailwindCss</span>
+              <span class="tech-badge puterjs">Puter.js</span>
+              <span class="tech-badge docker">Docker</span>
+            </div>
+          </div>
+
+          <div class="project-item">
+            <div class="project-title">
+              <img src="pbtbcoin.gif" width="45px" /><a
+                href="https://madeinbanglo.com/"
+                >madeinbanglo.com
+              </a>
+            </div>
+
+            <p>
+              Designed and developed woocommerce shop for e-commerce business.
+            </p>
+            <div class="tech-stack">
+              <span class="tech-badge wordpress">WordPress</span>
+              <span class="tech-badge aws">AWS</span>
+            </div>
+          </div>
+
+          <div class="project-item">
+            <div class="project-title">
+              <img src="migrante_logo_small.png" width="45px" /><a
+                href="https://cmput401.ca/projects/e5b13586-09c7-4ddd-baf6-fdb078d23398"
+              >
+                Migrante Alberta
+              </a>
+            </div>
+            <p>
+              Mobile app and backend connecting immigrants to hospitals,
+              charities, and community support networks via secure REST APIs.
+            </p>
+            <div class="tech-stack">
+              <span class="tech-badge python">Python</span>
+              <span class="tech-badge flutter">Flutter</span>
+              <span class="tech-badge django">Django</span>
+            </div>
+          </div>
+
+          <div class="project-item">
+            <div class="project-title">
+              <img src="Foosh.png" width="45px" /><a
+                href="https://www.foosh.ca/"
+                >FOOSH
+              </a>
+            </div>
+            <p>
+              Designed and developed a custom Shopify e-commerce storefront for
+              a streetwear boutique in Edmonton.
+            </p>
+            <div class="tech-stack">
+              <span class="tech-badge ecommerce">E-commerce</span>
+              <span class="tech-badge shopify">Shopify</span>
+              <span class="tech-badge liquid">Liquid</span>
+              <span class="tech-badge ux">UI/UX</span>
+              <span class="tech-badge javascript">JavaScript</span>
+            </div>
+          </div>
+        </div>
+        <div class="resize-handle"></div>
+      </div>
+
+      <!-- Design -->
+      <div id="design-window" class="window">
+        <div class="window-header">
+          <span>Design Projects</span>
+          <div class="window-controls">
+            <div class="window-button minimize">_</div>
+            <div class="window-button maximize">□</div>
+            <div class="window-button close">×</div>
+          </div>
+        </div>
+        <div class="window-content">
+          <h2>Design Portfolio</h2>
+          <p>Branding, web, and mobile UI work. More coming soon.</p>
+          <div class="design-gallery">
+            <div class="design-item">
+              <div
+                class="design-placeholder"
+                style="background: linear-gradient(45deg, #ef4444, #f97316)"
+              ></div>
+              <div>Brand Identity</div>
+            </div>
+            <div class="design-item">
+              <div
+                class="design-placeholder"
+                style="background: linear-gradient(45deg, #3b82f6, #8b5cf6)"
+              ></div>
+              <div>Web Design</div>
+            </div>
+            <div class="design-item">
+              <div
+                class="design-placeholder"
+                style="background: linear-gradient(45deg, #10b981, #06b6d4)"
+              ></div>
+              <div>Mobile UI</div>
+            </div>
+            <div class="design-item">
+              <div
+                class="design-placeholder"
+                style="background: linear-gradient(45deg, #f59e0b, #eab308)"
+              ></div>
+              <div>Illustrations</div>
+            </div>
+          </div>
+        </div>
+        <div class="resize-handle"></div>
+      </div>
+
+      <!-- Taskbar -->
+      <div class="taskbar">
+        <button class="start-button">Start</button>
+        <div class="taskbar-spacer"></div>
+        <div class="time">20:03</div>
+      </div>
+
+      <!-- Start Menu -->
+      <div class="start-menu" id="start-menu">
+        <div class="start-menu-item" onclick="openWindow('about')">
+          About me
+        </div>
+        <div class="start-menu-item" onclick="openWindow('resume')">Resume</div>
+        <div class="start-menu-item" onclick="openWindow('contact')">
+          Contact
+        </div>
+        <div class="start-menu-item" onclick="openWindow('projects')">
+          Projects
+        </div>
+        <div class="start-menu-item" onclick="openWindow('design')">Design</div>
+        <div
+          class="start-menu-item"
+          onclick="window.open('https://www.linkedin.com/in/shafin-rezwan-b0415a203/','_blank')"
+        >
+          LinkedIn
+        </div>
+        <div
+          class="start-menu-item"
+          onclick="window.open('https://github.com/ShafinRezwan','_blank')"
+        >
+          GitHub
+        </div>
+      </div>
     </div>
 
-    <!-- Projects -->
-    <div id="projects-window" class="window">
-      <div class="window-header">
-        <span>Projects</span>
-        <div class="window-controls">
-          <div class="window-button minimize">_</div>
-          <div class="window-button maximize">□</div>
-          <div class="window-button close">×</div>
-        </div>
-      </div>
-      <div class="window-content">
-        <h2>Selected Projects</h2>
-
-        <div class="project-item">
-          <div class="project-title"><a href="https://github.com/ShafinRezwan/Telus-Commision-Calculator">TELUS Commission Calculator</a></div>
-          <p>
-            Custom commission tracking app with real-time updates and a responsive UI to improve
-            order visibility and pay transparency for agents.
-          </p>
-          <div class="tech-stack">
-            <span class="tech-badge react">React</span>
-            <span class="tech-badge supabase">Supabase</span>
-        </div>
-        </div>
-
-        <div class="project-item">
-          <div class="project-title"><a href="https://github.com/ShafinRezwan/TailorScore">TailorScore</a></div>
-          <p>
-            Ai Resume analyzer that returns an ATS score and resume feedback relative to the job you want to apply for!
-          </p>
-          <p>Used Claude-Sonnet model for the ai analysis of resumes.</p>
-          <div class="tech-stack">
-            <span class="tech-badge react">React</span>
-            <span class="tech-badge typescript">TypeScript</span>
-            <span class="tech-badge tailwindcss">TailwindCss</span>
-            <span class="tech-badge puterjs">Puter.js</span>
-            <span class="tech-badge docker">Docker</span>
-        </div>
-
-         <div class="project-item">
-          <div class="project-title"> <img src="pbtbcoin.gif" width="45px"/><a href="https://madeinbanglo.com/">madeinbanglo.com </a></div>
-         
-          <p>
-            Designed and developed woocommerce shop for e-commerce business.
-          </p>
-          <div class="tech-stack">
-            <span class="tech-badge wordpress">WordPress</span>
-            <span class="tech-badge aws">AWS</span>
-        </div>
-        </div>
-
-        <div class="project-item">
-          <div class="project-title"><img src="migrante_logo_small.png" width="45px"/><a href="https://cmput401.ca/projects/e5b13586-09c7-4ddd-baf6-fdb078d23398"> Migrante Alberta </a></div>
-          <p>
-            Mobile app and backend connecting immigrants to hospitals, charities, and community
-            support networks via secure REST APIs.
-          </p>
-          <div class="tech-stack">
-            <span class="tech-badge python">Python</span>
-            <span class="tech-badge flutter">Flutter</span>
-            <span class="tech-badge django">Django</span>
-        </div>
-        </div>
-
-         <div class="project-item">
-          <div class="project-title"><img src="Foosh.png" width="45px"/><a href="https://www.foosh.ca/">FOOSH </a> </div>
-          <p>
-            Designed and developed a custom Shopify e-commerce storefront for a streetwear boutique in Edmonton.
-          </p>
-          <div class="tech-stack">
-            <span class="tech-badge ecommerce">E-commerce</span>
-            <span class="tech-badge shopify">Shopify</span>
-            <span class="tech-badge liquid">Liquid</span>
-            <span class="tech-badge ux">UI/UX</span>
-            <span class="tech-badge javascript">JavaScript</span>
-        </div>
-         </div>
-      </div>
-      <div class="resize-handle"></div>
-    </div>
-
-    <!-- Design -->
-    <div id="design-window" class="window">
-      <div class="window-header">
-        <span>Design Projects</span>
-        <div class="window-controls">
-          <div class="window-button minimize">_</div>
-          <div class="window-button maximize">□</div>
-          <div class="window-button close">×</div>
-        </div>
-      </div>
-      <div class="window-content">
-        <h2>Design Portfolio</h2>
-        <p>Branding, web, and mobile UI work. More coming soon.</p>
-        <div class="design-gallery">
-          <div class="design-item"><div class="design-placeholder" style="background: linear-gradient(45deg,#ef4444,#f97316);"></div><div>Brand Identity</div></div>
-          <div class="design-item"><div class="design-placeholder" style="background: linear-gradient(45deg,#3b82f6,#8b5cf6);"></div><div>Web Design</div></div>
-          <div class="design-item"><div class="design-placeholder" style="background: linear-gradient(45deg,#10b981,#06b6d4);"></div><div>Mobile UI</div></div>
-          <div class="design-item"><div class="design-placeholder" style="background: linear-gradient(45deg,#f59e0b,#eab308);"></div><div>Illustrations</div></div>
-        </div>
-      </div>
-      <div class="resize-handle"></div>
-    </div>
-
-    <!-- Taskbar -->
-    <div class="taskbar">
-      <button class="start-button">Start</button>
-      <div class="taskbar-spacer"></div>
-      <div class="time">20:03</div>
-    </div>
-
-    <!-- Start Menu -->
-    <div class="start-menu" id="start-menu">
-      <div class="start-menu-item" onclick="openWindow('about')">About me</div>
-      <div class="start-menu-item" onclick="openWindow('resume')">Resume</div>
-      <div class="start-menu-item" onclick="openWindow('contact')">Contact</div>
-      <div class="start-menu-item" onclick="openWindow('projects')">Projects</div>
-      <div class="start-menu-item" onclick="openWindow('design')">Design</div>
-      <div class="start-menu-item" onclick="window.open('https://www.linkedin.com/in/shafin-rezwan-b0415a203/','_blank')">LinkedIn</div>
-      <div class="start-menu-item" onclick="window.open('https://github.com/ShafinRezwan','_blank')">GitHub</div>
-    </div>
-  </div>
-
-      <script src="script.js" defer></script>
-</body>
+    <script src="script.js" defer></script>
+  </body>
 </html>
