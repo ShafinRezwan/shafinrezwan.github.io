@@ -324,11 +324,29 @@ body {
   background: #61dafb;
   color: #ffffff;
 }
+.tech-badge.tailwindcss {
+  background: #006aff;
+  color: #ffffff;
+}
+.tech-badge.puterjs {
+  background: #23af3f;
+  color: #ffffff;
+}
+
+.tech-badge.docker {
+  background: #af23af;
+  color: #ffffff;
+}
+
 .tech-badge.supabase {
   background: #3ecf8e;
 }
 .tech-badge.javascript {
   background: #6700ed;
+}
+.tech-badge.typescript {
+  background: #ffc423;
+  color: #ffffff;
 }
 
 .tech-badge.node {
@@ -359,6 +377,15 @@ body {
 
 .tech-badge.liquid {
   background: #00bfc6;
+}
+.tech-badge.sql {
+  background: #17c600;
+}
+.tech-badge.tech-badge.mongodb {
+  background: #a3e32c;
+}
+.tech-badge.tech-badge.docker {
+  background: #3b0290;
 }
 
 .tech-badge.ux {
@@ -455,7 +482,7 @@ body {
 
 .window-header {
   touch-action: none;
-  background: linear-gradient(90deg, #8b5cf6, #a855f7);
+  background: #1e6cfc;
   color: white;
   padding: 8px 12px;
   cursor: move;
