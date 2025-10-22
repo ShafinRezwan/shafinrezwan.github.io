@@ -26,12 +26,12 @@ body {
 
 .taskbar {
   position: fixed;
-  bottom: 0;
+  top: 0;
   left: 0;
   right: 0;
   height: 40px;
   background: #d1d5db;
-  border-top: 2px solid #9ca3af;
+  border-bottom: 2px solid #9ca3af;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -64,7 +64,7 @@ body {
 
 .start-menu {
   position: absolute;
-  bottom: 40px;
+  top: 40px;
   left: 10px;
   width: 200px;
   background: #f3f4f6;
@@ -264,7 +264,8 @@ body {
 }
 
 .start-button {
-  background: #f3f4f6;
+  background: #0055ff;
+  color: white;
   border: 2px outset #d1d5db;
   padding: 5px 15px;
   font-family: "Courier New", monospace;
@@ -281,14 +282,93 @@ body {
   color: #374151;
 }
 
-.icon-grid {
+/* Mac Dock Styling */
+.dock {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: end;
+  gap: 8px;
+  padding: 12px 20px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  z-index: 999;
+  transition: all 0.3s ease;
+}
+
+.dock-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 12px;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  width: 64px;
+  height: 64px;
+  justify-content: center;
+}
+
+.dock-icon:hover {
+  transform: scale(1.2) translateY(-8px);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.dock-icon:active {
+  transform: scale(1.1) translateY(-4px);
+}
+
+.dock-icon.selected {
+  background: rgba(59, 130, 246, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.dock-icon .icon {
+  width: 48px;
+  height: 48px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  image-rendering: pixelated;
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
+}
+
+.dock-icon:hover .icon {
+  transform: scale(1.1);
+}
+
+.dock-icon .icon-label {
   position: absolute;
-  top: 20px;
-  left: 20px;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
-  z-index: 10;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 11px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  text-shadow: none;
+}
+
+.dock-icon:hover .icon-label {
+  opacity: 1;
+}
+
+/* Hide old desktop icon grid */
+.icon-grid {
+  display: none;
 }
 
 .tech-stack {
@@ -717,5 +797,34 @@ p {
   #resume-window {
     width: 95vw;
     height: calc(85vh - 40px); /* keep taskbar visible */
+  }
+
+  /* Mobile dock adjustments */
+  .dock {
+    bottom: 10px;
+    padding: 8px 12px;
+    gap: 4px;
+    border-radius: 16px;
+  }
+
+  .dock-icon {
+    width: 48px;
+    height: 48px;
+    padding: 4px;
+  }
+
+  .dock-icon .icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .dock-icon:hover {
+    transform: scale(1.15) translateY(-6px);
+  }
+
+  .dock-icon .icon-label {
+    font-size: 10px;
+    bottom: -20px;
+    padding: 2px 6px;
   }
 }

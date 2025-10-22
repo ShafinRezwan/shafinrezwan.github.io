@@ -6,18 +6,15 @@ let startX, startY, startLeft, startTop, startWidth, startHeight;
 let zIndexCounter = 100;
 let minimizedWindows = new Set();
 
-// Icon click handlers
-document.querySelectorAll(".desktop-icon").forEach((icon) => {
+// Dock icon click handlers
+document.querySelectorAll(".dock-icon").forEach((icon) => {
   icon.addEventListener("click", function () {
     // Remove selection from other icons
     document
-      .querySelectorAll(".desktop-icon")
+      .querySelectorAll(".dock-icon")
       .forEach((i) => i.classList.remove("selected"));
     this.classList.add("selected");
-  });
 
-  // Double-click to open
-  icon.addEventListener("dblclick", function () {
     const windowId = this.dataset.window;
     const action = this.dataset.action;
 
@@ -38,7 +35,7 @@ document.querySelectorAll(".desktop-icon").forEach((icon) => {
 document.addEventListener("click", function (e) {
   if (e.target.classList.contains("desktop") || e.target.tagName === "BODY") {
     document
-      .querySelectorAll(".desktop-icon")
+      .querySelectorAll(".dock-icon")
       .forEach((i) => i.classList.remove("selected"));
   }
 });
@@ -99,7 +96,11 @@ function clampWindowToViewport(win) {
     0,
     maxLeft
   );
-  const top = clamp(parseInt(win.style.top || rect.top, 10) || 0, 0, maxTop);
+  const top = clamp(
+    parseInt(win.style.top || rect.top, 10) || 0,
+    TASKBAR_HEIGHT,
+    maxTop
+  );
 
   win.style.left = left + "px";
   win.style.top = top + "px";
@@ -117,9 +118,9 @@ function centerWindow(win) {
     Math.max(0, vw - rect.width)
   );
   const top = clamp(
-    Math.round((vh - rect.height) / 3),
-    0,
-    Math.max(0, vh - rect.height - TASKBAR_HEIGHT)
+    Math.round((vh - rect.height) / 3) + TASKBAR_HEIGHT,
+    TASKBAR_HEIGHT,
+    Math.max(TASKBAR_HEIGHT, vh - rect.height - TASKBAR_HEIGHT)
   );
   win.style.left = left + "px";
   win.style.top = top + "px";
@@ -285,7 +286,7 @@ document.querySelectorAll(".window").forEach((win) => {
         win.style.left = "0px";
         win.style.top = "0px";
         win.style.width = "100vw";
-        win.style.height = "calc(100vh - 40px)";
+        win.style.height = "calc(100vh - 80px)";
       } else {
         win.style.left = win.dataset.prevLeft || "100px";
         win.style.top = win.dataset.prevTop || "60px";
@@ -324,12 +325,12 @@ document.querySelectorAll(".window").forEach((win) => {
       const rect = win.getBoundingClientRect();
       const maxLeft = Math.max(0, window.innerWidth - rect.width);
       const maxTop = Math.max(
-        0,
+        TASKBAR_HEIGHT,
         window.innerHeight - rect.height - TASKBAR_HEIGHT
       );
 
       win.style.left = clamp(newLeft, 0, maxLeft) + "px";
-      win.style.top = clamp(newTop, 0, maxTop) + "px";
+      win.style.top = clamp(newTop, TASKBAR_HEIGHT, maxTop) + "px";
 
       e.preventDefault(); // prevent page from scrolling while dragging
     },
@@ -392,8 +393,7 @@ document.addEventListener("mousemove", function (e) {
     // Allow windows to be dragged anywhere, including partially off-screen
     // Only prevent dragging completely above the viewport (keep at least 20px of header visible)
     activeWindow.style.left = newLeft + "px";
-    activeWindow.style.top =
-      Math.max(-parseInt(activeWindow.offsetHeight) + 40, newTop) + "px";
+    activeWindow.style.top = Math.max(TASKBAR_HEIGHT, newTop) + "px";
   }
 
   if (isResizing && activeWindow) {
@@ -428,9 +428,11 @@ function updateTime() {
   const timeString = now.toLocaleTimeString([], {
     hour: "2-digit",
     minute: "2-digit",
+    second: "2-digit",
   });
   document.querySelector(".time").textContent = timeString;
 }
+setInterval(updateTime, 1000);
 
 // Start button functionality
 document.querySelector(".start-button").addEventListener("click", function () {
