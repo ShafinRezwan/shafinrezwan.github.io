@@ -404,6 +404,12 @@ body {
   background: #61dafb;
   color: #ffffff;
 }
+
+.tech-badge.next {
+  background: #e26125;
+  color: #ffffff;
+}
+
 .tech-badge.tailwindcss {
   background: #006aff;
   color: #ffffff;
